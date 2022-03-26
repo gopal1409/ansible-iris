@@ -12,4 +12,10 @@
         packages:
           - openjdk-11-jdk
           - tree
+    - name: check the jdk version
+      command: java --version
+      register: javaversion
+    - name: Print Java version
+      debug:
+        msg: "Jave version install: {{javaversion.stdout}}"
   
