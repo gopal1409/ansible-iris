@@ -14,7 +14,7 @@
           - tree
     - name: check the jdk version
       command: java --version
-      register: javaversion
+      register: javaversion #after executing the task i want to store the task value ina  varaibel
     - name: Print Java version
       debug:
         msg: "Jave version install: {{javaversion.stdout}}"
