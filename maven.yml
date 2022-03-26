@@ -18,4 +18,12 @@
     - name: Print Java version
       debug:
         msg: "Jave version install: {{javaversion.stdout}}"
+    - name: donwload latest release of maven and store in opt directory
+      get_url:
+        url: https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz
+        dest: /opt
+    - name: unarchive the maven tar file
+      unarchive:
+        src: /opt/apache-maven-3.8.5-bin.tar.gz
+        dest: /opt
   
