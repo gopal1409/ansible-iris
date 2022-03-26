@@ -33,5 +33,15 @@
       file:
         path: /etc/profile.d/apachemaven.sh
         state: touch
+    - name: we need to add maven configuration
+      lineinfile:
+        path: /etc/profile.d/apachemaven.sh
+        state: present 
+        line: "{{items}"
+      with_items:
+      - export JAVA_HOME=/usr/lib/jvm/default-java
+      - export M2_HOME=/opt/apachemaven
+      - export MAVEN_HOME=/opt/apachemaven
+      - export PATH=${M2_HOME}/bin:${PATH}
 
   
