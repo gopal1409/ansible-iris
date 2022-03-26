@@ -27,4 +27,7 @@
         src: /opt/apache-maven-3.8.5-bin.tar.gz
         dest: /opt
         remote_src: yes
+    - name: rename the module which we have downloaded
+      command: mv /opt/apache-maven-3.8.5 /opt/apache-maven
+
   
