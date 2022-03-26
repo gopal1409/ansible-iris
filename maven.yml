@@ -37,7 +37,7 @@
       lineinfile:
         path: /etc/profile.d/apachemaven.sh
         state: present 
-        line: "{{items}"
+        line: "{{items}}"
       with_items:
       - export JAVA_HOME=/usr/lib/jvm/default-java
       - export M2_HOME=/opt/apachemaven
