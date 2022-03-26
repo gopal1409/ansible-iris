@@ -44,5 +44,11 @@
       - export M2_HOME=/opt/apachemaven
       - export MAVEN_HOME=/opt/apachemaven
       - export PATH=${M2_HOME}/bin:${PATH}
+    - name: make the shell script executable
+      command: chmod +x /etc/profile.d/apachemaven.sh
+    - name: upload it in config of linux machine
+      command: source /etc/profile.d/apachemaven.sh
+    - name: latest version of maven
+      command: mvn --version
 
   
