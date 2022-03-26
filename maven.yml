@@ -47,7 +47,7 @@
     - name: make the shell script executable
       command: chmod +x /etc/profile.d/apachemaven.sh
     - name: upload it in config of linux machine
-      command: source /etc/profile.d/apachemaven.sh
+      shell: source /etc/profile.d/apachemaven.sh
     - name: latest version of maven
       command: mvn --version
 
